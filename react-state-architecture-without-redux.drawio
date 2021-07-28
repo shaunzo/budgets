@@ -1,1 +1,96 @@
-<mxfile host="app.diagrams.net" modified="2021-07-27T17:52:07.957Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36" version="14.9.2" etag="-Q1_4Y-2uviJtyO_WZOI" type="github"><diagram id="rLzw9ygbIW8jMWB2bIqU">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2021-07-28T07:08:09.754Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36" etag="u57dqLUm2dqV31_KkP8X" version="14.9.2" type="github">
+  <diagram id="rLzw9ygbIW8jMWB2bIqU" name="Page-1">
+    <mxGraphModel dx="2134" dy="655" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Ox-DrkK-TR3Fsi0tjyYA-1" value="&lt;font style=&quot;font-size: 32px&quot;&gt;State flow and architecture example without redux&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-50" y="40" width="890" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ox-DrkK-TR3Fsi0tjyYA-2" value="&lt;font style=&quot;font-size: 23px&quot;&gt;app.js&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="260" y="120" width="285" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="Ox-DrkK-TR3Fsi0tjyYA-3" value="entries&lt;br&gt;deleteEntry()&lt;br&gt;editEntry()&lt;br&gt;addEntry()&lt;br&gt;description&lt;br&gt;value&lt;br&gt;isOpen&lt;br&gt;setIsOpen()&lt;br&gt;isExpense&lt;br&gt;setIsExpense()&lt;br&gt;entryId&lt;br&gt;incomesTotal&lt;br&gt;expensesTotal&lt;br&gt;total" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="350" y="160" width="117.5" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="Ox-DrkK-TR3Fsi0tjyYA-4" value="&lt;font style=&quot;font-size: 23px&quot;&gt;DisplayBalances.js&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="-50" y="350" width="285" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="Ox-DrkK-TR3Fsi0tjyYA-5" value="incomesTotal&lt;br&gt;expensesTotall&lt;br&gt;total" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="33.75" y="400" width="117.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ox-DrkK-TR3Fsi0tjyYA-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;curved=1;strokeColor=#FFD966;strokeWidth=2;" edge="1" parent="1" source="Ox-DrkK-TR3Fsi0tjyYA-6" target="Ox-DrkK-TR3Fsi0tjyYA-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Ox-DrkK-TR3Fsi0tjyYA-6" value="&lt;font style=&quot;font-size: 23px&quot;&gt;DisplayBalance.js&lt;br&gt;(resuseable)&lt;br&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="-150" y="150" width="285" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Ox-DrkK-TR3Fsi0tjyYA-8" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;strokeColor=#66B2FF;strokeWidth=3;" edge="1" parent="1" source="Ox-DrkK-TR3Fsi0tjyYA-3" target="Ox-DrkK-TR3Fsi0tjyYA-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Ox-DrkK-TR3Fsi0tjyYA-18" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#FFD966;strokeWidth=2;" edge="1" parent="1" source="Ox-DrkK-TR3Fsi0tjyYA-9" target="Ox-DrkK-TR3Fsi0tjyYA-17">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="930" y="175" />
+              <mxPoint x="930" y="540" />
+              <mxPoint x="570" y="540" />
+              <mxPoint x="570" y="670" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ox-DrkK-TR3Fsi0tjyYA-23" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#FFD966;" edge="1" parent="1" source="Ox-DrkK-TR3Fsi0tjyYA-9" target="Ox-DrkK-TR3Fsi0tjyYA-21">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1000" y="158" />
+              <mxPoint x="1000" y="680" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ox-DrkK-TR3Fsi0tjyYA-9" value="&lt;font style=&quot;font-size: 23px&quot;&gt;EntryForm.js&lt;br&gt;(resuseable)&lt;br&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="610" y="140" width="285" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Ox-DrkK-TR3Fsi0tjyYA-16" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#FFD966;strokeWidth=2;" edge="1" parent="1" source="Ox-DrkK-TR3Fsi0tjyYA-10" target="Ox-DrkK-TR3Fsi0tjyYA-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Ox-DrkK-TR3Fsi0tjyYA-10" value="&lt;font style=&quot;font-size: 23px&quot;&gt;EntryLine.js&lt;br&gt;(resuseable)&lt;br&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="610" y="240" width="285" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Ox-DrkK-TR3Fsi0tjyYA-11" value="&lt;font style=&quot;font-size: 23px&quot;&gt;EntryLines.js&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="450" y="410" width="285" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Ox-DrkK-TR3Fsi0tjyYA-12" value="entries&lt;br&gt;deleteEntry()&lt;br&gt;editEntry()" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="533.75" y="460" width="117.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ox-DrkK-TR3Fsi0tjyYA-13" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;strokeWidth=2;strokeColor=#66B2FF;" edge="1" parent="1" source="Ox-DrkK-TR3Fsi0tjyYA-3" target="Ox-DrkK-TR3Fsi0tjyYA-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Ox-DrkK-TR3Fsi0tjyYA-17" value="&lt;font style=&quot;font-size: 23px&quot;&gt;NewEntryForm.js&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="110" y="570" width="230" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="Ox-DrkK-TR3Fsi0tjyYA-19" value="addEntry()&lt;br&gt;description&lt;br&gt;value&lt;br&gt;isExpense&lt;br&gt;setValue&lt;br&gt;setDescription&lt;br&gt;setIsExpense" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="170" y="610" width="117.5" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="Ox-DrkK-TR3Fsi0tjyYA-20" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#66B2FF;" edge="1" parent="1" source="Ox-DrkK-TR3Fsi0tjyYA-3" target="Ox-DrkK-TR3Fsi0tjyYA-19">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="350" y="520" />
+              <mxPoint x="70" y="520" />
+              <mxPoint x="70" y="670" />
+              <mxPoint x="130" y="670" />
+              <mxPoint x="130" y="680" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ox-DrkK-TR3Fsi0tjyYA-21" value="&lt;font style=&quot;font-size: 23px&quot;&gt;ModalEdit.js&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="600" y="580" width="230" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="Ox-DrkK-TR3Fsi0tjyYA-22" value="isOpen&lt;br&gt;setIsOpen&lt;br&gt;description&lt;br&gt;setDescription&lt;br&gt;value&lt;br&gt;setValue&lt;br&gt;isExpense&lt;br&gt;setIsExpense" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="656.25" y="630" width="117.5" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="Ox-DrkK-TR3Fsi0tjyYA-24" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#66B2FF;" edge="1" parent="1" source="Ox-DrkK-TR3Fsi0tjyYA-3" target="Ox-DrkK-TR3Fsi0tjyYA-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
