@@ -7,6 +7,7 @@ import DisplayBalance from './components/DisplayBalance';
 import DisplayBalances from './components/DisplayBalances';
 import EntryLines from './components/EntryLines';
 import ModalEdit from './components/ModalEdit';
+import { createStore } from 'redux'
 
 function App() {
   const [entries, setEntries] = useState(initialEntries);
@@ -38,7 +39,14 @@ function App() {
     }
     // eslint-disable-next-line
   }, [isOpen]);
+  
+  //
+    const store = createStore((state = initialEntries) => {
+      return state;
+    });
 
+    console.log(store.getState())
+  //  
   useEffect(() => {
     // Changes that happen if there is a change in our entries
     let totalIncomes = 0;
