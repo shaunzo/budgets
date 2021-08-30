@@ -41,11 +41,32 @@ function App() {
   }, [isOpen]);
   
   //
-    const store = createStore((state = initialEntries) => {
+    const store = createStore((state = initialEntries, action) => {
+      console.log(action);
+
+      switch (action.type) {
+        case 'ADD_ENTRY':
+          const  newEntries = entries.concat({
+            id: 5,
+            description: 'Hellow from Redux',
+            value: 100,
+            isExpense: false
+          })
+          return newEntries;
+          break;
+      
+        default:
+          return state;
+      }
+
       return state;
     });
 
-    console.log(store.getState())
+    console.log('store before: ', store.getState());
+
+    store.dispatch({type: 'ADD_ENTRY'});
+
+    console.log('store after: ', store.getState());
   //  
   useEffect(() => {
     // Changes that happen if there is a change in our entries
