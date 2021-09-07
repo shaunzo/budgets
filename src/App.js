@@ -7,7 +7,7 @@ import DisplayBalance from './components/DisplayBalance';
 import DisplayBalances from './components/DisplayBalances';
 import EntryLines from './components/EntryLines';
 import ModalEdit from './components/ModalEdit';
-import { createStore } from 'redux'
+import { createStore, combineReducers} from 'redux';
 
 function App() {
   const [entries, setEntries] = useState(initialEntries);
@@ -56,7 +56,12 @@ function App() {
     }
   }
 
-  const store = createStore(entriesReducer);
+  // Combine our reducers into key value pairs to prevent us from having ONE massive reducer file
+  const combinedReducers = combineReducers({
+    entries: entriesReducer,
+  });
+
+  const store = createStore(combinedReducers);
 
   // Subscribe to changes in store
   store.subscribe(() => {
