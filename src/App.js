@@ -42,31 +42,40 @@ function App() {
   
   //
     const store = createStore((state = initialEntries, action) => {
-      console.log(action);
-
+      let newEntries;
+      // Reducers for each action
       switch (action.type) {
         case 'ADD_ENTRY':
-          const  newEntries = entries.concat({
-            id: 5,
-            description: 'Hellow from Redux',
-            value: 100,
-            isExpense: false
-          })
+          newEntries = state.concat({...action.payload});
           return newEntries;
-          break;
-      
+        case 'REMOVE_ENTRY':
+          newEntries = state.filter(entry => entry.id != action.payload.id);
+          return newEntries;
         default:
           return state;
       }
 
-      return state;
     });
 
-    console.log('store before: ', store.getState());
+    // Subscribe to changes in store
+    store.subscribe(() => {
+      console.log('store: ', store.getState());
+    });
 
-    store.dispatch({type: 'ADD_ENTRY'});
+    const payload_add = {
+      id: 5,
+      description: 'Hello from Redux',
+      value: 999,
+      isExpense: true
+    };
 
-    console.log('store after: ', store.getState());
+    const payload_remove = {
+      id: 1
+    }
+
+    store.dispatch({type: 'ADD_ENTRY', payload: payload_add});
+    store.dispatch({type: 'REMOVE_ENTRY', payload: payload_remove})
+
   //  
   useEffect(() => {
     // Changes that happen if there is a change in our entries
