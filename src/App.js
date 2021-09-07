@@ -41,7 +41,7 @@ function App() {
   }, [isOpen]);
   
   //
-    const store = createStore((state = initialEntries, action) => {
+  const entriesReducer = (state = initialEntries, action) => {
       let newEntries;
       // Reducers for each action
       switch (action.type) {
@@ -49,40 +49,41 @@ function App() {
           newEntries = state.concat({...action.payload});
           return newEntries;
         case 'REMOVE_ENTRY':
-          newEntries = state.filter(entry => entry.id != action.payload.id);
+          newEntries = state.filter(entry => entry.id !== action.payload.id);
           return newEntries;
         default:
           return state;
-      }
-
-    });
-
-    // Subscribe to changes in store
-    store.subscribe(() => {
-      console.log('store: ', store.getState());
-    });
-
-    const payload_add = {
-      id: 5,
-      description: 'Hello from Redux',
-      value: 999,
-      isExpense: true
-    };
-
-    const payload_remove = {
-      id: 1
     }
+  }
 
-    const addEntryRedux = (payload) => {
-      return {type: 'ADD_ENTRY', payload};
-    }
+  const store = createStore(entriesReducer);
 
-    const removeEntryRedux = (id) => {
-      return {type: 'REMOVE_ENTRY', payload: {id}}
-    }
+  // Subscribe to changes in store
+  store.subscribe(() => {
+    console.log('store: ', store.getState());
+  });
 
-    store.dispatch(addEntryRedux(payload_add));
-    store.dispatch(removeEntryRedux(1));
+  const payload_add = {
+    id: 5,
+    description: 'Hello from Redux',
+    value: 999,
+    isExpense: true
+  };
+
+  const payload_remove = {
+    id: 1
+  }
+
+  const addEntryRedux = (payload) => {
+    return {type: 'ADD_ENTRY', payload};
+  }
+
+  const removeEntryRedux = (id) => {
+    return {type: 'REMOVE_ENTRY', payload: {id}}
+  }
+
+  store.dispatch(addEntryRedux(payload_add));
+  store.dispatch(removeEntryRedux(1));
 
   //  
   useEffect(() => {
