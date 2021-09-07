@@ -7,7 +7,6 @@ import DisplayBalance from './components/DisplayBalance';
 import DisplayBalances from './components/DisplayBalances';
 import EntryLines from './components/EntryLines';
 import ModalEdit from './components/ModalEdit';
-import { createStore, combineReducers} from 'redux';
 
 function App() {
   const [entries, setEntries] = useState(initialEntries);
@@ -39,56 +38,6 @@ function App() {
     }
     // eslint-disable-next-line
   }, [isOpen]);
-  
-  //
-  const entriesReducer = (state = initialEntries, action) => {
-      let newEntries;
-      // Reducers for each action
-      switch (action.type) {
-        case 'ADD_ENTRY':
-          newEntries = state.concat({...action.payload});
-          return newEntries;
-        case 'REMOVE_ENTRY':
-          newEntries = state.filter(entry => entry.id !== action.payload.id);
-          return newEntries;
-        default:
-          return state;
-    }
-  }
-
-  // Combine our reducers into key value pairs to prevent us from having ONE massive reducer file
-  const combinedReducers = combineReducers({
-    entries: entriesReducer,
-  });
-
-  const store = createStore(combinedReducers);
-
-  // Subscribe to changes in store
-  store.subscribe(() => {
-    console.log('store: ', store.getState());
-  });
-
-  const payload_add = {
-    id: 5,
-    description: 'Hello from Redux',
-    value: 999,
-    isExpense: true
-  };
-
-  const payload_remove = {
-    id: 1
-  }
-
-  const addEntryRedux = (payload) => {
-    return {type: 'ADD_ENTRY', payload};
-  }
-
-  const removeEntryRedux = (id) => {
-    return {type: 'REMOVE_ENTRY', payload: {id}}
-  }
-
-  store.dispatch(addEntryRedux(payload_add));
-  store.dispatch(removeEntryRedux(1));
 
   //  
   useEffect(() => {
