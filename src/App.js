@@ -7,6 +7,7 @@ import DisplayBalance from './components/DisplayBalance';
 import DisplayBalances from './components/DisplayBalances';
 import EntryLines from './components/EntryLines';
 import ModalEdit from './components/ModalEdit';
+import {useSelector} from 'react-redux';
 
 function App() {
   const [entries, setEntries] = useState(initialEntries);
@@ -19,10 +20,8 @@ function App() {
   const [expensesTotal, setExpensesTotal] = useState(0);
   const [total, setTotal] = useState(0);
 
-  // Update state variables if there is a change,
-  // an empty or no array will run it on start up,
-  // passing the variable will be a dependency
-  // ie. this will only run if that dependency state variable changes
+  // We use the yseSelector hook to get the entries from state
+  const entriesRedux = useSelector((state) => state.entries);
 
   useEffect(() => {
     if(!isOpen && entryId) {
@@ -110,7 +109,7 @@ function App() {
       <MainHeader title='History' type='h3' />
 
       <EntryLines
-        entries={entries}
+        entries={entriesRedux}
         deleteEntry={deleteEntry}
         setIsOpen={setIsOpen}
         editEntry={editEntry}
