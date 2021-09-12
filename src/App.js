@@ -10,7 +10,6 @@ import ModalEdit from './components/ModalEdit';
 import {useSelector} from 'react-redux';
 
 function App() {
-  const [entries, setEntries] = useState(initialEntries);
   const [description, setDescription] = useState('');
   const [value, setValue] = useState('');
   const [isExpense, setIsExpense] = useState(true);
@@ -20,8 +19,8 @@ function App() {
   const [expensesTotal, setExpensesTotal] = useState(0);
   const [total, setTotal] = useState(0);
 
-  // We use the yseSelector hook to get the entries from state
-  const entriesRedux = useSelector((state) => state.entries);
+  // We use the useSelector hook to get the entries from state
+  const entries = useSelector((state) => state.entries);
 
   useEffect(() => {
     if(!isOpen && entryId) {
@@ -30,7 +29,7 @@ function App() {
       newEntries[index].description = description;
       newEntries[index].value = value;
       newEntries[index].isExpense = isExpense;
-      setEntries(newEntries);
+      // setEntries(newEntries);
 
       // Set values back to default
       resetEntry();
@@ -63,12 +62,6 @@ function App() {
     setIsExpense(true);
   }
 
-  const  deleteEntry = (id) => {
-    const result = entries.filter(entry => entry.id !== id);
-    // Modify our state for entries - not change it!
-    setEntries(result);
-  }
-
   const editEntry = (id) => {
     console.log(`edit entry with id ${id}`);
     if(id) {
@@ -95,7 +88,7 @@ function App() {
       isExpense
     });
 
-    setEntries(result);
+    // setEntries(result);
     resetEntry();
   }
 
@@ -109,8 +102,7 @@ function App() {
       <MainHeader title='History' type='h3' />
 
       <EntryLines
-        entries={entriesRedux}
-        deleteEntry={deleteEntry}
+        entries={entries}
         setIsOpen={setIsOpen}
         editEntry={editEntry}
       />
@@ -141,27 +133,3 @@ function App() {
 }
 
 export default App;
-
-var initialEntries = [
-  {
-    id: 1,
-    description: "Work income",
-    value: 1000.00,
-    isExpense: false
-  }, {
-    id: 2,
-    description: "Water bill",
-    value: 20.00,
-    isExpense: true
-  }, {
-    id: 3,
-    description: "Rent",
-    value: 300,
-    isExpense: true
-  }, {
-    id: 4,
-    description: "Power Bill",
-    value: 50.00,
-    isExpense: true
-  }
-]
