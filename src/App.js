@@ -39,6 +39,7 @@ function App() {
     // eslint-disable-next-line
   }, [isOpen]);
 
+  //  
   useEffect(() => {
     // Changes that happen if there is a change in our entries
     let totalIncomes = 0;
