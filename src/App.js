@@ -109,7 +109,6 @@ function App() {
 
       <MainHeader title='Add new transaction' type='h3'/>
       <NewEntryForm
-        addEntry={addEntry}
         description={description}
         value={value}
         isExpense={isExpense}
