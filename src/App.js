@@ -7,9 +7,9 @@ import DisplayBalance from './components/DisplayBalance';
 import DisplayBalances from './components/DisplayBalances';
 import EntryLines from './components/EntryLines';
 import ModalEdit from './components/ModalEdit';
+import {useSelector} from 'react-redux';
 
 function App() {
-  const [entries, setEntries] = useState(initialEntries);
   const [description, setDescription] = useState('');
   const [value, setValue] = useState('');
   const [isExpense, setIsExpense] = useState(true);
@@ -19,10 +19,8 @@ function App() {
   const [expensesTotal, setExpensesTotal] = useState(0);
   const [total, setTotal] = useState(0);
 
-  // Update state variables if there is a change,
-  // an empty or no array will run it on start up,
-  // passing the variable will be a dependency
-  // ie. this will only run if that dependency state variable changes
+  // We use the useSelector hook to get the entries from state
+  const entries = useSelector((state) => state.entries);
 
   useEffect(() => {
     if(!isOpen && entryId) {
@@ -31,7 +29,7 @@ function App() {
       newEntries[index].description = description;
       newEntries[index].value = value;
       newEntries[index].isExpense = isExpense;
-      setEntries(newEntries);
+      // setEntries(newEntries);
 
       // Set values back to default
       resetEntry();
@@ -64,12 +62,6 @@ function App() {
     setIsExpense(true);
   }
 
-  const  deleteEntry = (id) => {
-    const result = entries.filter(entry => entry.id !== id);
-    // Modify our state for entries - not change it!
-    setEntries(result);
-  }
-
   const editEntry = (id) => {
     console.log(`edit entry with id ${id}`);
     if(id) {
@@ -96,7 +88,7 @@ function App() {
       isExpense
     });
 
-    setEntries(result);
+    // setEntries(result);
     resetEntry();
   }
 
@@ -111,14 +103,12 @@ function App() {
 
       <EntryLines
         entries={entries}
-        deleteEntry={deleteEntry}
         setIsOpen={setIsOpen}
         editEntry={editEntry}
       />
 
       <MainHeader title='Add new transaction' type='h3'/>
       <NewEntryForm
-        addEntry={addEntry}
         description={description}
         value={value}
         isExpense={isExpense}
@@ -142,27 +132,3 @@ function App() {
 }
 
 export default App;
-
-var initialEntries = [
-  {
-    id: 1,
-    description: "Work income",
-    value: 1000.00,
-    isExpense: false
-  }, {
-    id: 2,
-    description: "Water bill",
-    value: 20.00,
-    isExpense: true
-  }, {
-    id: 3,
-    description: "Rent",
-    value: 300,
-    isExpense: true
-  }, {
-    id: 4,
-    description: "Power Bill",
-    value: 50.00,
-    isExpense: true
-  }
-]
