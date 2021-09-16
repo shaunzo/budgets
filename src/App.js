@@ -21,6 +21,7 @@ function App() {
 
   // We use the useSelector hook to get the entries from state
   const entries = useSelector((state) => state.entries);
+  const isOpenRedux = useSelector((state) => state.modals.isOpen);
 
   useEffect(() => {
     if(!isOpen && entryId) {
@@ -117,7 +118,7 @@ function App() {
         setIsExpense={setIsExpense}/>
 
       <ModalEdit
-        isOpen={isOpen}
+        isOpen={isOpenRedux}
         setIsOpen={setIsOpen}
         addEntry={addEntry}
         description={description}
