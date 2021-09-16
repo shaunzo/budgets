@@ -6,12 +6,11 @@ import { useDispatch } from 'react-redux';
 
 function ModalEdit({
     isOpen,
-    setIsOpen,
     description,
-    setDescription,
     value,
-    setValue,
     isExpense,
+    setDescription,
+    setValue,
     setIsExpense
 }) {
     const dispatch = useDispatch();
@@ -31,7 +30,7 @@ function ModalEdit({
             </Modal.Content>
             <Modal.Actions>
                 <Button onClick={() => dispatch(closeEditModal())}>Close</Button>
-                <Button onClick={() => setIsOpen(false)} primary>OK</Button>
+                <Button onClick={() => dispatch(closeEditModal())} primary>OK</Button>
             </Modal.Actions>
         </Modal>
     )
