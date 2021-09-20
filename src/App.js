@@ -22,7 +22,7 @@ function App() {
   useEffect(() => {
     const index = entries.findIndex(entry => entry.id === id);
     setEntry(entries[index]);
-  }, [isOpen, id]);
+  }, [isOpen, id, entries]);
 
   //  
   useEffect(() => {
