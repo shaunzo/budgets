@@ -8,6 +8,7 @@ import DisplayBalances from './components/DisplayBalances';
 import EntryLines from './components/EntryLines';
 import ModalEdit from './components/ModalEdit';
 import {useSelector} from 'react-redux';
+import axios from 'axios';
 
 function App() {
   const [incomesTotal,  setIncomesTotal] = useState(0);
@@ -42,6 +43,15 @@ function App() {
     setTotal(totalIncomes - totalExpenses);
 
   }, [entries]);
+
+  async function fetchInitialData() {
+    const result = await axios.get('http://localhost:3001/entries');
+    console.log(result);
+  }
+
+  useEffect(() => {
+    fetchInitialData();
+  }, [])
 
   return (
     <Container>
