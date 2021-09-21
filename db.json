@@ -3,22 +3,34 @@
     [
         {
             "id": 1,
-            "description": "Work income",
+            "description": "Work income"
+        }, {
+            "id": 2,
+            "description": "Water bill"
+        }, {
+            "id": 3,
+            "description": "Rent"
+        }, {
+            "id": 4,
+            "description": "Power Bill"
+        }
+    ],
+    "values":
+    [
+        {
+            "id": 1,
             "value": 1000.00,
             "isExpense": false
         }, {
             "id": 2,
-            "description": "Water bill",
             "value": 20.00,
             "isExpense": true
         }, {
             "id": 3,
-            "description": "Rent",
             "value": 300,
             "isExpense": true
         }, {
             "id": 4,
-            "description": "Power Bill",
             "value": 50.00,
             "isExpense": true
         }
