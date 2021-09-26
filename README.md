@@ -1,5 +1,16 @@
 # Getting Started with Create React App
 
+### To run local backend server
+1. install json-server globally
+`npm install -g json-server`
+2. From the root of the project start the server and point to db file
+`json-server --watch db.json`
+3. If if installed locally run
+`npm run backend`
+
+To run front and backend run
+`npm run start:all`
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
