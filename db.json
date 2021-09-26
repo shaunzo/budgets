@@ -15,6 +15,10 @@
     {
       "id": 4,
       "description": "Food"
+    },
+    {
+      "id": "b9da0261-c865-4e67-ae26-2690c821c995",
+      "description": "New thing"
     }
   ],
   "values": [
@@ -37,6 +41,11 @@
       "id": 4,
       "value": 50,
       "isExpense": true
+    },
+    {
+      "id": "b9da0261-c865-4e67-ae26-2690c821c995",
+      "isExpense": false,
+      "value": "3400"
     }
   ]
 }
