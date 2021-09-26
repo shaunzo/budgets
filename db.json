@@ -19,6 +19,14 @@
     {
       "id": "b9da0261-c865-4e67-ae26-2690c821c995",
       "description": "New thing"
+    },
+    {
+      "id": "2abf9e3d-fd2a-48b0-9740-a2c7646cbbc1",
+      "description": "Another New Thing"
+    },
+    {
+      "id": "74feb241-9778-44d4-9c1f-62b42ea92d2b",
+      "description": "Levy"
     }
   ],
   "values": [
@@ -46,6 +54,16 @@
       "id": "b9da0261-c865-4e67-ae26-2690c821c995",
       "isExpense": false,
       "value": "3400"
+    },
+    {
+      "id": "2abf9e3d-fd2a-48b0-9740-a2c7646cbbc1",
+      "isExpense": true,
+      "value": "230"
+    },
+    {
+      "id": "74feb241-9778-44d4-9c1f-62b42ea92d2b",
+      "isExpense": true,
+      "value": "1249"
     }
   ]
 }
